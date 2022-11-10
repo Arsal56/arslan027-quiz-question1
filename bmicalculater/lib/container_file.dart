@@ -10,6 +10,16 @@ class RepeatContainerCode extends StatelessWidget {
   void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
-    return 
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        margin: EdgeInsets.all(15.0),
+        child: CardWidget,
+        decoration: BoxDecoration(
+          color: colors,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
+    );
   }
 }
