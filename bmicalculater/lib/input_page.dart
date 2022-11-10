@@ -22,17 +22,6 @@ class _InputPageState extends State<InputPage> {
   int sliderHeight = 180;
   int sliderWeight = 60;
   int ageSlider = 20;
-  void incrementCounter() {
-    setState(() {
-      sliderWeight++;
-    });
-  }
-
-  void decrementCounter() {
-    setState(() {
-      sliderWeight--;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -237,27 +226,6 @@ class _InputPageState extends State<InputPage> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class RoundIcon extends StatelessWidget {
-  RoundIcon({required this.iconData, required this.onPress});
-  final IconData iconData;
-  final VoidCallback onPress;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      elevation: 6.0,
-      child: Icon(iconData),
-      constraints: BoxConstraints.tightFor(
-        height: 56.0,
-        width: 56.0,
-      ),
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4C4F5E),
-      onPressed: onPress,
     );
   }
 }
