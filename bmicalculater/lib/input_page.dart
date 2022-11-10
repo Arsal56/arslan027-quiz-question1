@@ -1,6 +1,6 @@
 import 'package:bmi_calculator/constant.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'calculator_file.dart';
 import 'container_file.dart';
