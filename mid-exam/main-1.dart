@@ -1,0 +1,97 @@
+import 'dart:async';
+import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'home.dart';
+
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+
+  @override
+  Widget build(BuildContext context) {
+
+    return MaterialApp(
+      title: 'Tasbeeh Counter',
+      theme: ThemeData(
+        colorScheme: ColorScheme.light(
+          primary: Colors.yellow,
+          //secondary: Color(0xFF2F2F2F),
+        ),
+        //scaffoldBackgroundColor: Color(0xFF2F2F2F),
+        textTheme: TextTheme(
+          bodyText2: TextStyle(color: Colors.black),
+          headline4: TextStyle(color: Colors.black),
+          headline5: TextStyle(color: Colors.black),
+        ),
+      ),
+      home: splashscreen(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+
+class splashscreen extends StatefulWidget {
+  const splashscreen({Key? key}) : super(key: key);
+
+  @override
+  State<splashscreen> createState() => _splashscreenState();
+}
+
+class _splashscreenState extends State<splashscreen> {
+  @override
+  void initState() {
+    super.initState ();
+    Timer(const Duration(seconds: 5),
+            ()=>Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => home())));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Container(
+      constraints: BoxConstraints.expand(),
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/tasbih.jpeg"),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 3.0, sigmaY: 3.0),
+        child: Container(
+          decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '\n\n\n\n\n\n'
+                    '\n\n\n\n\n\n'
+                    '\n\n\n\n\n\n''',
+                style: TextStyle(
+                  color: Color(0xFFF6F6F6),
+                  fontSize: 20.0,
+                  decoration: TextDecoration.none,
+                ),
+              ),
+            ],
+
+          ),
+        ),
+
+      ),
+    );
+
+  }
+}
+
+
+
+
+
